@@ -1,5 +1,9 @@
 {
 	"home": "Home",
+	"catalog": "Catalog",
+	"orders": "Orders",
+	"clients": "Clients",
+	"clientList": "Client list",
 	
 	"sidenav.dashboard": "Dashboard",
 	"sidenav.dashboard.default": "Default",

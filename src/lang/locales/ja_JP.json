@@ -1,5 +1,9 @@
 {
     "home": "ホームページ",
+    "catalog": "カタログ",
+	"orders": "注文",
+	"clients": "クライアント",
+	"clientList": "カスタマーサポート",
     
     "sidenav.dashboard": "ダッシュボード",
     "sidenav.dashboard.default": "既定",

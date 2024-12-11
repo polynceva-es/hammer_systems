@@ -1,5 +1,9 @@
 {
     "home": "主页",
+    "catalog": "目錄",
+	"orders": "訂單",
+	"clients": "客戶",
+	"clientList": "客戶支援",
     
 	"sidenav.dashboard": "仪表板",
 	"sidenav.dashboard.default": "默认",

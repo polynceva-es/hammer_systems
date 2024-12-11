@@ -1,5 +1,9 @@
 {
     "home": "Accueil",
+    "catalog": "Catalogue",
+	"orders": "Ordres",
+	"clients": "Clientèle",
+	"clientList": "Support client",
     
     "sidenav.dashboard": "Tableau de bord",
     "sidenav.dashboard.default": "Défaut",
