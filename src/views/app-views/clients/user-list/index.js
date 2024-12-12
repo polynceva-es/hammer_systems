@@ -7,9 +7,11 @@ import EditProfile from "./EditProfile";
 
 import store from "redux/store";
 import { getUsers } from "redux/api/users";
+import { showLoading } from "redux/actions/Users";
 
 export class UserList extends Component {
   componentDidMount() {
+	showLoading();
     getUsers();
   }
 //   componentDidUpdate(prevProps) {
