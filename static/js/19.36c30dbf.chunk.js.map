@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/app-views/planer/index.js"],"names":["Planer"],"mappings":"0HAUeA,UARA,IAEb,yD","file":"static/js/19.36c30dbf.chunk.js","sourcesContent":["import React from 'react'\r\n\r\nconst Planer = () => {\r\n\treturn (\r\n\t\t<div>\r\n\t\t\tPlaner component works!\r\n\t\t</div>\r\n\t)\r\n}\r\n\r\nexport default Planer\r\n"],"sourceRoot":""}

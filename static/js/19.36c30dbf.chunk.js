@@ -1,0 +1,2 @@
+(this.webpackJsonpemilus=this.webpackJsonpemilus||[]).push([[19],{499:function(s,e,i){"use strict";i.r(e);var n=i(2);i(0);e.default=()=>Object(n.jsx)("div",{children:"Planer component works!"})}}]);
+//# sourceMappingURL=19.36c30dbf.chunk.js.map
