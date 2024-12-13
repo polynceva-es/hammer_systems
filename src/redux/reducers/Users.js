@@ -1,6 +1,5 @@
 import {
 	SHOW_LOADING,
-    // GET_USERS
 	GET_USERS_SUCCESS
 } from '../constants/Users';
 

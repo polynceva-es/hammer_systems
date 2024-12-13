@@ -1,4 +1,4 @@
-import { takeEvery, call, put, fork } from 'redux-saga/effects';
+import { all, takeEvery, call, put, fork } from 'redux-saga/effects';
 import * as actions from '../actions/Users';
 import * as api from '../api/users';
 import { GET_USERS_REQUEST } from 'redux/constants/Users';
@@ -15,5 +15,7 @@ function* watchGetUsersRequest() {
   yield takeEvery(GET_USERS_REQUEST, getUsers);
 }
 
-const userSagas = [fork(watchGetUsersRequest)];
-export default userSagas;
+
+export default function* userSagas() {
+  yield all([fork(watchGetUsersRequest)])
+};

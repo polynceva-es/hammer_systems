@@ -4,27 +4,29 @@ import { EyeOutlined, DeleteOutlined } from "@ant-design/icons";
 import moment from "moment";
 import AvatarStatus from "components/shared-components/AvatarStatus";
 import EditProfile from "./EditProfile";
+import { connect } from 'react-redux'
 
 import store from "redux/store";
 import { getUsers } from "redux/api/users";
-import { showLoading } from "redux/actions/Users";
+import { getUsersRequest } from "redux/actions/Users";
+
+const mapStateToProps = reduxStoreState => {
+  return({
+    users: reduxStoreState.users.users,
+    userProfileVisible: false,
+    selectedUser: null,
+  })
+}
 
 export class UserList extends Component {
   componentDidMount() {
-	showLoading();
-    getUsers();
+    this.props.dispatch(getUsersRequest());
   }
-//   componentDidUpdate(prevProps) {
-//     if (this.props !== prevProps) {
-//       this.setState({
-//         users: store.getState().users.users
-//       });
-//     }
-//   }
+
   state = {
-    users: store.getState().users.users,
-    userProfileVisible: false,
-    selectedUser: null,
+    users: this.props.users,
+    userProfileVisible: this.props.userProfileVisible,
+    selectedUser: this.props.selectedUser,
   };
 
   deleteUser = (userId) => {
@@ -49,7 +51,8 @@ export class UserList extends Component {
   };
 
   render() {
-    const { users, userProfileVisible, selectedUser } = this.state;
+    const { userProfileVisible, selectedUser } = this.state;
+    const { users } = this.props;
 
     const tableColumns = [
       {
@@ -148,4 +151,4 @@ export class UserList extends Component {
   }
 }
 
-export default UserList;
+export default connect(mapStateToProps)(UserList);
