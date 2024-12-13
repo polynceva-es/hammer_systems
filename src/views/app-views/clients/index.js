@@ -1,8 +1,15 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Loading from 'components/shared-components/Loading';
+import { getUsersRequest } from "redux/actions/Users";
+import store from "redux/store";
+
 
 const Clients = ({ match }) => {
+	useEffect(()=> {
+		store.dispatch(getUsersRequest());
+	}, [])
+
 	return (
 	  <Suspense fallback={<Loading cover="content"/>}>
 		<Switch>

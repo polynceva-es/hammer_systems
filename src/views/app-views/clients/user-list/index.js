@@ -6,10 +6,6 @@ import AvatarStatus from "components/shared-components/AvatarStatus";
 import EditProfile from "./EditProfile";
 import { connect } from 'react-redux'
 
-import store from "redux/store";
-import { getUsers } from "redux/api/users";
-import { getUsersRequest } from "redux/actions/Users";
-
 const mapStateToProps = reduxStoreState => {
   return({
     users: reduxStoreState.users.users,
@@ -20,9 +16,12 @@ const mapStateToProps = reduxStoreState => {
 
 export class UserList extends Component {
   componentDidMount() {
-    this.props.dispatch(getUsersRequest());
+    this.setState({
+      users: this.props.users,
+      userProfileVisible: this.props.userProfileVisible,
+      selectedUser: this.props.selectedUser,
+    })
   }
-
   state = {
     users: this.props.users,
     userProfileVisible: this.props.userProfileVisible,
@@ -51,9 +50,8 @@ export class UserList extends Component {
   };
 
   render() {
-    const { userProfileVisible, selectedUser } = this.state;
-    const { users } = this.props;
-
+    const { users, userProfileVisible, selectedUser } = this.state;
+  
     const tableColumns = [
       {
         title: "User",
